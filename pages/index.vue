@@ -1,5 +1,12 @@
-<script setup></script>
+<script setup>
+import { useShoppingListStore } from '~/store/shoppingListStore';
+const store = useShoppingListStore()
+console.log("listNmaes ", store.listNames)
+</script>
 <template>
-    <h1>this is the main page</h1>
+    <div v-for="listName in store.listNames">
+        <p>Neuer Listenname: {{ listName }}</p>
+    </div>
+
 </template>
 <style></style>
